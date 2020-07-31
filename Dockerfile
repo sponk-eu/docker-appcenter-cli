@@ -10,5 +10,5 @@ RUN mkdir ~/.appcenter-cli \
     && npm install -g appcenter-cli \
     && npm install -g react-native-cli \
     && apk update \
-    && apk add git openssh bash \
+    && apk add git openssh bash git \
     && mkdir ~/.ssh/
