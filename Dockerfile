@@ -4,7 +4,7 @@ RUN apt-get update \
     && apt-get install -y git bash sudo \
     && npm install -g appcenter-cli --unsafe-perm
 
-RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+RUN echo 'node ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 USER node
 RUN mkdir -p /home/node/app
