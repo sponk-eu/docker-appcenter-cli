@@ -1,14 +1,12 @@
-FROM node:10.16.3-alpine
+FROM node:12.10.0-stretch
 
-# USER node
-# RUN mkdir -p /home/node/app
-# WORKDIR /home/node/app
+RUN apt-get update \
+    && apt-get install -y git bash \
+    && npm install -g appcenter-cli --unsafe-perm
+
+USER node
+RUN mkdir -p /home/node/app
+WORKDIR /home/node/app
 
 RUN mkdir ~/.appcenter-cli \
-    && echo false > ~/.appcenter-cli/telemetryEnabled.json \
-    && npm --global config set user root \
-    && npm install -g appcenter-cli \
-    && npm install -g react-native-cli \
-    && apk update \
-    && apk add git openssh bash git \
-    && mkdir ~/.ssh/
+    && echo false > ~/.appcenter-cli/telemetryEnabled.json 
