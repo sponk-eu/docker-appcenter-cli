@@ -1,7 +1,7 @@
 FROM node:12.10.0-stretch
 
 RUN apt-get update \
-    && apt-get install -y git bash \
+    && apt-get install -y git bash sudo \
     && npm install -g appcenter-cli --unsafe-perm
 
 USER node
