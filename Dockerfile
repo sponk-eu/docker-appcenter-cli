@@ -4,7 +4,6 @@ RUN apt-get update \
     && apt-get install -y git bash sudo \
     && npm install -g appcenter-cli --unsafe-perm
 
-RUN adduser --disabled-password --gecos '' node
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 USER node
